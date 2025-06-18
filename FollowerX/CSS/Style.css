@@ -1,0 +1,572 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #1c1c1e;
+  color: #000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 0px;
+  background-color: #1c1c1e;;
+  color: #1c1c1e;;
+  position: relative;
+}
+
+.navbar-center {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+}
+
+.navbar-right {
+  position: absolute;
+  right: 10px; /* lo coloca a la derecha */
+  top:40px;   /* opcional: ajusta según necesites */
+  font-weight: bold;
+}
+
+.navbar-icon {
+  width: 50px;   /* tamaño ajustable */
+  height: auto;
+}
+
+
+.icon-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.menu-icon {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  background-color: #262626;
+  color: white;
+  padding-top: 2rem;
+  transition: left 0.3s ease;
+  z-index: 1000;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu ul li {
+  padding: 1rem;
+}
+
+.side-menu ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+.side-menu.open {
+  left: 0;
+}
+
+.imagen {
+  width: 150px;
+  height:auto;
+  object-fit: cover;
+  margin-top: 10px;
+}
+
+.content {
+  padding-top: 80px;
+}
+
+.promo {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.promo img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.promo-text h2 {
+  margin-top: 20px;
+  font-size: 24px;
+}
+
+.promo-text p {
+  margin: 10px 0;
+}
+
+.shop-btn {
+  background-color: black;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.training h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+  gap: 10px;
+  padding: 10px;
+}
+
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.product-info p {
+  font-size: 14px;
+  color: #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.product-info .precio {
+  font-size: 18px;
+  color: #000000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.badge {
+  display: inline-block;
+  background-color: #eee;
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  margin-bottom: 5px;
+}
+
+.color {
+  color: rgb(248, 244, 244);
+  font-size: 0.9rem;
+}
+
+/* SUBMENU ESTILO CON <a> */
+.submenu {
+  background-color: #1c1c1e;;
+  border-bottom: 1px solid #ddd;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.submenu::-webkit-scrollbar {
+  display: none;
+}
+
+.submenu-buttons {
+  display: inline-flex;
+  gap: 15px;
+  padding: 10px;
+  white-space: nowrap;
+  min-width: max-content;
+}
+
+.submenu-buttons a {
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  padding-bottom: 5px;
+  border-bottom: 3px solid transparent;
+  color: #ffffff;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.submenu-buttons a.active {
+  border-bottom: 3px solid rgb(250, 240, 240);
+  color: rgb(255, 255, 255);
+}
+
+.submenu-buttons a:hover {
+  color: #ffffff;
+}
+
+
+/* ------- Modal para imagen grande -------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000; /* debe ser mayor que otros elementos */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.85);
+  padding: 60px 20px;
+  overflow: auto;
+}
+
+.modal-content {
+  display: block;
+  max-width: 90%;
+  max-height: 80vh;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.5);
+  animation: zoomIn 0.3s ease forwards;
+}
+
+.modal-close {
+  position: fixed;
+  top: 30px;
+  right: 35px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s;
+  z-index: 2100;
+}
+
+.modal-close:hover {
+  color: #ccc;
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.carousel-container {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* para que el scroll sea suave en iOS */
+  width: 100%;
+  padding: 10px 0;
+}
+
+.carousel {
+  display: flex;
+  gap: 10px;
+}
+
+.product-card {
+  flex: 0 0 calc((100% / 3) - 10px); /* Mostrar 3 productos con espacio entre ellos */
+  box-sizing: border-box;
+  background: #e6e6e6c5;
+  border: 1px solid #e6e6e600;
+  border-radius: 6px;
+  padding: 10px;
+  scroll-snap-align: start; /* para que el scroll "pegue" */
+}
+
+/* Opcional: para ocultar scrollbar en Webkit */
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+
+.carousel-container {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel {
+  display: flex;
+  transition: transform 0.5s ease;
+  will-change: transform;
+  padding-bottom: 30px;
+}
+
+.product-card {
+  box-sizing: border-box;
+  padding: 10px;
+  
+  
+}
+
+
+.buy-button {
+  display: inline-block;
+  margin-top: 15px;
+  margin-bottom: 20PX;
+  padding: 10Px 8px;
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.15);
+  transition: transform 0.2s ease, background 0.3s ease;
+  font-size: 12px;
+
+  
+  
+}
+
+.buy-button:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(255, 251, 251, 0.2);
+  
+}
+
+.product-info{
+  text-align: center;
+}
+
+
+.precio-anterior {
+      text-decoration: line-through;
+      color: gray;
+      }
+
+
+.tituloo {
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  padding-bottom: 20px;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  transition: border-color 0.2s, color 0.2s;
+  color: black;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20;
+  
+}
+
+
+.precio {
+  background: none;
+  border: none;
+  font-weight: bold;
+  font-size: 20px;
+  cursor: pointer;
+  padding-bottom: 20px;
+  border-bottom: 3px solid transparent;
+  color: #444;
+  transition: border-color 0.2s, color 0.2s;
+  color: black;
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding-top: 20;
+  
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.tituloo {
+  animation: pulse 2s infinite;
+  
+}
+
+
+.btnn {
+  font-size: 30px; /* Puedes ajustar el tamaño según lo que necesites */
+  text-decoration: none; /* Opcional, quita el subrayado */
+
+}
+.Carito {
+    font-size: 30px; /* Puedes ajustar el tamaño según lo que necesites */
+  text-decoration: none; /* Opcional, quita el subrayado */
+}
+
+.Corazon {
+    font-size: 30px; /* Puedes ajustar el tamaño según lo que necesites */
+  text-decoration: none; /* Opcional, quita el subrayado */
+}
+
+.add-to-cart {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 8px 8px;
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, background 0.3s ease;
+  font-size: 12px;
+  border: none;
+  cursor: pointer;
+  justify-content: center;
+
+}
+
+.add-to-cart:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+.talla {
+  cursor: pointer;
+  margin-right: 5px;
+  padding: 1px 5px; /* Aumenta el padding para hacer los botones más grandes */
+  font-size: 15px;     /* Aumenta el tamaño de la fuente */
+  border: 1px solid #aaa;
+  border-radius: 10px;
+  user-select: none;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.talla.selected {
+  background-color: #222;
+  color: white;
+}
+
+.tallas {
+  display: flex;
+  gap: 8px; /* Ajusta según el espacio que desees */
+  justify-content: center; /* Centra las tallas si quieres */
+  margin-top: 10px; /* Opcional para separación vertical */
+  flex-wrap: wrap; /* Opcional si las tallas son muchas */
+}
+
+
+
+.opcion {
+  background-color: #1c1c1e;
+  flex: 1;
+  min-width: 250px;
+  padding: 15px;
+  border-radius: 8px;
+  border: 1px solid 1c1c1e;
+  text-align: center;
+}
+
+.opcion h3 {
+  margin-bottom: 15px;
+  color: #fff9f9;
+}
+
+.iconos {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconos img,
+.sofort,
+.paypal {
+  height: 35px;
+  object-fit: contain;
+  padding-left: 10px;
+}
+
+.faqs {
+  margin-top: 40px;
+  text-align: center;
+  color: #222;
+}
+/* Responsive */
+@media (max-width: 600px) {
+  .product-card {
+    flex-direction: row; /* Fuerza horizontal incluso en celular */
+  }
+  .product-info {
+    padding: 0 10px;
+  }
+}
+
+.image-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.logout-button {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #e74c3c;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  z-index: 1000; /* Asegura que esté por encima */
+  transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+  background-color: #c0392b;
+  
+}
+
+.rede {
+  height: 3em; /* Ajusta la altura al tamaño del texto */
+  vertical-align: middle; /* Alineación vertical con el texto */
+}
+.redee {
+  height: 2.5em; /* Ajusta la altura al tamaño del texto */
+  vertical-align: middle; /* Alineación vertical con el texto */
+  background-color: #c0392b;
+  border-radius: 5px;
+  
+}
+
