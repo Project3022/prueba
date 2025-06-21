@@ -569,4 +569,57 @@ body {
   border-radius: 5px;
   
 }
+ .about-container {
+      padding: 30px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
 
+    .about-section {
+      background-color: #e6e6e6c5;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+    }
+
+    .about-section h2 {
+      font-size: 24px;
+      margin-bottom: 15px;
+      color: #ff006f;
+      text-align: center;
+    }
+
+    .about-section p,
+    .about-section ul {
+      font-size: 16px;
+      line-height: 1.7;
+      text-align: justify;
+      color: #0b0b0b;
+    }
+
+    .about-section ul {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+
+    .about-section ul li {
+      margin-bottom: 10px;
+    }
+
+
+
+    @media (max-width: 600px) {
+      .about-container {
+        padding: 20px 10px;
+      }
+
+      .about-section h2 {
+        font-size: 20px;
+      }
+
+      .about-section p {
+        font-size: 15px;
+      }
+
+    }
