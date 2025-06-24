@@ -22,7 +22,7 @@ body {
 
 .navbar-left,
 .navbar-right {
-  width: 50px; /* o el mismo ancho que tu botón */
+  width: auto; /* o el mismo ancho que tu botón */
   display: flex;
   align-items: center;
   justify-content: center;
