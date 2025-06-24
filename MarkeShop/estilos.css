@@ -39,6 +39,7 @@ body {
   width: 150px;
   height: auto;
   padding-bottom: 10px;
+  padding-top: 5px;
 }
 
 
@@ -253,4 +254,3 @@ body {
 .filtros select {
   width: 200px;
 }
-
