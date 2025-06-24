@@ -52,7 +52,7 @@ modal?.addEventListener('click', e => {
 });
 
 // REDIRECCIÓN A WHATSAPP CON MENSAJE
-const whatsappNumber = "8292308873";
+const whatsappNumber = "8495194977";
 
 document.querySelectorAll('.product-card').forEach(card => {
   const button = card.querySelector('.buy-button');
