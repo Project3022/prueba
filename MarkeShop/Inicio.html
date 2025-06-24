@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Marketplace - Compra y Vende</title>
+  <link rel="stylesheet" href="estilos.css" />
+</head>
+<body>
+<header class="navbar">
+  <div class="navbar-left">
+    <button class="menu-icon">☰</button>
+  </div>
+  <div class="navbar-center">
+    <img src="./imagen/logo.png" alt="Logo" class="imagen" />
+  </div>
+  <div class="navbar-right">
+    <!-- vacío, solo para equilibrar -->
+  </div>
+</header>
+
+  <nav class="submenu-buttons">
+    <a href="#" class="active">Todos</a>
+    <a href="#">Eletronico</a>
+    <a href="#">Ropas</a>
+    <a href="#">Accesorios</a>
+    <a href="#">Otros</a>
+
+  </nav>
+
+ <section class="filtros">
+<input type="text" id="buscador" placeholder="Buscar productos..." />
+  <select id="select-filtro-estado">
+    <option value="todos">Categoría</option>
+    <option value="nuevo">Nuevo</option>
+    <option value="usado">Usado</option>
+  </select>
+</section>
+
+
+  <section class="container">
+<div class="product-card nuevo">
+  <img src="./imagen/1.png" alt="Producto ejemplo" />
+  <div class="product-info">
+    <p class="titulo">helado</p>
+    <p class="precio">$2,500</p>
+    <p class="vendedor">Vendido por: <strong>Ana López</strong></p>
+    <p class="estado">Estado: Nuevo</p>
+    <p class="descripcion">Aroma dulce, ideal para la noche.</p>
+    <a href="#" class="buy-button">💵 Comprar</a>
+  </div>
+</div>
+
+
+
+        <div class="product-card usado">
+      <img src="./imagen/2.jpeg" alt="Producto ejemplo" />
+      <div class="product-info">
+        <p class="titulo">Perfume Afnan</p>
+        <p class="precio">$2,500</p>
+        <p class="vendedor">Vendido por: <strong>Ana López</strong></p>
+        <p class="estado usado">Estado: Usado</p>
+        <p class="descripcion">Aroma dulce, ideal para la noche.</p>
+        <a href="#" class="buy-button">💵 Comprar</a>
+      </div>
+    </div>
+     </div>
+
+
+
+
+
+  </section>
+
+
+
+  <script src="script.js"></script>
+<section class="contacto">
+  <h2>¿Quieres publicar tu producto?</h2>
+  <p>Envíanos los detalles por WhatsApp y nosotros lo publicamos por ti.</p>
+  <a href="https://api.whatsapp.com/send?phone=8292308873&text=Hola,%20quiero%20publicar%20mi%20producto%20en%20el%20marketplace" target="_blank" class="contacto-button">
+    📤 Enviar por WhatsApp
+  </a>
+</section>
+
+</body>
+</html>
