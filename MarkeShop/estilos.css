@@ -15,7 +15,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 10px;
+  padding: 50px 10px;
   background-color: #1c1c1e;
   position: relative;
   flex-wrap: wrap; /* Agrega esto por si se rompe en móviles */
