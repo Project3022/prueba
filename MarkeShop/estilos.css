@@ -272,6 +272,12 @@ height: 40px;
   height: 40px;
 
 }
+.side-menu a.active {
+  background-color: #444;
+  font-weight: bold;
+  border-left: 5px solid #25d366;
+}
+
 .lightbox {
   display: none;
   position: fixed;
