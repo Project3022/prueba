@@ -138,4 +138,16 @@ buttons.forEach(button => {
     e.stopPropagation();
     lightbox.style.display = "none";
   });
+document.addEventListener("DOMContentLoaded", () => {
+    const enlaces = document.querySelectorAll(".side-menu a");
+    const paginaActual = window.location.pathname.split("/").pop();
+
+    enlaces.forEach(enlace => {
+      const href = enlace.getAttribute("href");
+      if (href && href.includes(paginaActual)) {
+        enlace.classList.add("active");
+      }
+    });
+  });
+
 
