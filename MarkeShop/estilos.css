@@ -248,9 +248,14 @@ body {
 }
 
 .filtros input {
-  width: 300px;
+  width: 400px;
+height: 30px;
+
+  
 }
 
 .filtros select {
   width: 200px;
+  height: 30px;
+
 }
