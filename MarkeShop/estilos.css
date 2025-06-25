@@ -18,8 +18,19 @@ body {
   padding: 0px 10px;
   background-color: #1c1c1e;
   position: relative;
+  flex-wrap: wrap; /* Agrega esto por si se rompe en móviles */
 }
 
+.navbar-center {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute; /* Para centrar absolutamente */
+  left: 50%;
+  transform: translateX(-50%);
+  top: 5px; /* Ajusta si es necesario */
+}
 .navbar-left,
 .navbar-right {
   width: auto; /* o el mismo ancho que tu botón */
@@ -28,12 +39,7 @@ body {
   justify-content: center;
 }
 
-.navbar-center {
-  flex-grow: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 
 .imagen {
   width: 150px;
